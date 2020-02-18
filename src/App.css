@@ -1,38 +1,43 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: url(./images/blackGradientBackgoundPNG.png) no-repeat;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.container {
+  min-height: 100vh;
+  width: 70%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.skills-bar {
+  width: 100%;
+  padding: 0 0 3px 0;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+  background-color: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 0 30px 5px #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* MENU COMPONENT */
+
+/* SKILL COMPONENT */
+.Skill {
+  font-size: 1.5rem;
+}
+.Skill .p {
+  display: inline-block;
+}
+.Skill .item {
+  color: #358cd6;
+}
+
+.Skill .tag {
+  color: #808080;
 }
