@@ -5,7 +5,7 @@ import './App.css';
 
 const App = () => {
   const [skills, setSkills] = useState([
-    'React',
+    'React.js',
     'JavaScript',
     'HTML5',
     'CSS3',
@@ -14,6 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Menu />
       <div className="container">
         <div className="skills-bar">
           {skills.map((item, index) => (
