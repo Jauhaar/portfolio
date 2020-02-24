@@ -10,19 +10,51 @@
 .container {
   min-height: 100vh;
   width: 70%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; */
+}
+
+.app-grid {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    'cover-image'
+    'skills-bar'
+    'icon-bar';
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.grid-skills-bar {
+  grid-area: skills-bar;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .skills-bar {
   width: 100%;
+  height: fit-content;
   padding: 0 0 3px 0;
   display: flex;
   justify-content: space-around;
   border-radius: 20px;
   background-color: rgba(20, 20, 20, 0.8);
   box-shadow: 0 0 30px 5px #000;
+}
+
+.grid-icon-bar {
+  grid-area: icon-bar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-bar {
+  width: 100%;
+  padding: 0 0 3px 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* MENU COMPONENT */
@@ -72,9 +104,11 @@
 .menu .left-panel {
   width: 60%;
   height: 100%;
-  background-color: rgba(0, 7, 15, 0.5);
+  /* background-color: rgba(0, 7, 15, 0.5); */
+  background-color: rgba(0, 0, 0, 0.5);
   transform: translate3d(-100%, 0, 0);
   transition: all 0.5s ease-out;
+  z-index: 2;
 }
 
 .menu .left-panel.show {
@@ -85,9 +119,11 @@
 .menu .right-panel {
   width: 40%;
   height: 100%;
-  background-color: rgba(0, 10, 20, 0.5);
+  /* background-color: rgba(0, 10, 20, 0.5); */
+  background-color: rgba(0, 0, 0, 0.6);
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
+  z-index: 2;
 }
 
 .menu .right-panel.show {
@@ -108,6 +144,7 @@
 .menu-nav .nav-item {
   list-style-type: none;
   text-shadow: 0px 0px 10px #000;
+
   cursor: pointer;
   user-select: none;
   opacity: 0;
@@ -158,4 +195,9 @@
 
 .Skill .tag {
   color: #808080;
+}
+
+/* ICON COMPONENT */
+.icon {
+  color: #a3a3a3;
 }
