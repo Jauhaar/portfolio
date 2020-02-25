@@ -24,9 +24,19 @@
     'skills-bar'
     'icon-bar';
   grid-template-columns: 100%;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 4fr 1fr 1fr;
+}
+.grid-cover-image {
+  grid-area: cover-image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.grid-cover-image img {
+  width: auto;
+  max-height: 100%;
+}
 .grid-skills-bar {
   grid-area: skills-bar;
   display: flex;
@@ -73,8 +83,28 @@
   width: 56px;
   height: 6px;
   background-color: #fff;
+  /* box-shadow: 0 0 1px 1px #fff; */
   margin: 0 0 8px 0;
   transition: all 0.5s ease-out;
+}
+
+.menu-btn-animation {
+  animation-name: menu-btn-animation;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes menu-btn-animation {
+  0% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+  50% {
+    box-shadow: 0 0 1px 0.8px #fff;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
 }
 
 .menu-btn.close {
@@ -200,4 +230,8 @@
 /* ICON COMPONENT */
 .icon {
   color: #a3a3a3;
+  transition: all 0.2s ease-out;
+}
+.icon:hover {
+  color: #fff;
 }

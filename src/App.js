@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Skill from './components/Skill';
 import Menu from './components/Menu';
 import Icon from './components/Icon';
+import coverImage from './images/coverimage.png';
 import './App.css';
 import {
   faLinkedin,
@@ -32,6 +33,9 @@ const App = () => {
       <Menu />
       <div className="container">
         <div className="app-grid">
+          <div className="grid-cover-image">
+            <img src={coverImage} alt="" />
+          </div>
           <div className="grid-skills-bar">
             <div className="skills-bar">
               {skills.map((item, index) => (

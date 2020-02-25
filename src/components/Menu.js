@@ -20,9 +20,9 @@ const Menu = () => {
     <div className="menu">
       {/* Menu Button */}
       <div className={menuBtnState} onClick={OnMenuBtnCLick}>
-        <div className="btn-line"></div>
-        <div className="btn-line"></div>
-        <div className="btn-line"></div>
+        <div className="btn-line menu-btn-animation"></div>
+        <div className="btn-line menu-btn-animation"></div>
+        <div className="btn-line menu-btn-animation"></div>
       </div>
 
       {/* Left Panel */}
