@@ -36,6 +36,7 @@
 .grid-cover-image img {
   width: auto;
   max-height: 100%;
+  user-select: none;
 }
 .grid-skills-bar {
   grid-area: skills-bar;
