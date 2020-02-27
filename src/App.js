@@ -22,10 +22,11 @@ const App = () => {
   const [icons, setIcons] = useState([
     {
       icon: faLinkedin,
-      link: 'https://www.linkedin.com/in/mohammed-jauhaar-saib-556a80177/'
+      link: 'https://www.linkedin.com/in/mohammed-jauhaar-saib-556a80177/',
+      size: '3x'
     },
-    { icon: faCodepen, link: 'https://codepen.io/Jauhaar/pens/' },
-    { icon: faGithubSquare, link: 'https://github.com/jauhaar' }
+    { icon: faCodepen, link: 'https://codepen.io/Jauhaar/pens/', size: '3x' },
+    { icon: faGithubSquare, link: 'https://github.com/jauhaar', size: '3x' }
   ]);
 
   return (
@@ -46,7 +47,12 @@ const App = () => {
           <div className="grid-icon-bar">
             <div className="icon-bar">
               {icons.map((item, index) => (
-                <Icon key={index} source={item.icon} link={item.link} />
+                <Icon
+                  key={index}
+                  source={item.icon}
+                  link={item.link}
+                  size={item.size}
+                />
               ))}
             </div>
           </div>
