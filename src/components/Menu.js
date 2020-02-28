@@ -6,7 +6,11 @@ import {
   faGithubSquare,
   faCodepen
 } from '@fortawesome/free-brands-svg-icons';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,9 +25,10 @@ const Menu = () => {
     setShowLeftPanel(showMenu ? 'left-panel' : 'left-panel show');
     setShowRightPanel(showMenu ? 'right-panel' : 'right-panel show');
     setShowNav(showMenu ? 'nav-item' : 'nav-item show');
+    setCopiedStyle('#fff');
   };
 
-  const [icons, setIcons] = useState([
+  const [icons] = useState([
     {
       icon: faLinkedin,
       link: 'https://www.linkedin.com/in/mohammed-jauhaar-saib-556a80177/',
@@ -32,6 +37,8 @@ const Menu = () => {
     { icon: faCodepen, link: 'https://codepen.io/Jauhaar/pens/', size: '2x' },
     { icon: faGithubSquare, link: 'https://github.com/jauhaar', size: '2x' }
   ]);
+
+  const [copiedStyle, setCopiedStyle] = useState('#a3a3a3');
 
   return (
     <div className="menu">
@@ -50,9 +57,37 @@ const Menu = () => {
             <div className="circle-crop">
               <img src={portrait} alt="" />
             </div>
+            <p>Mohammed Jauhaar Saib</p>
           </div>
-          <div className="grid-quote"></div>
-          <div className="grid-contact-details"></div>
+          <div className="grid-info">
+            <div className="info-card">
+              <p>
+                “Give a man a program, frustrate him for a day. Teach a man to
+                program, frustrate him for a lifetime.”
+              </p>
+              <span>-A frustrated programmer</span>
+            </div>
+          </div>
+          <div className="grid-contact-details">
+            <div className="contact-card">
+              <span className="txt-email">m.jauhaar.saib@gmail.com</span>
+              <CopyToClipboard
+                text="m.jauhaar.saib@gmail.com"
+                onCopy={() => {
+                  setCopiedStyle('#1eff1e');
+                }}
+              >
+                <IconButton>
+                  <FontAwesomeIcon
+                    icon={faCopy}
+                    size="1x"
+                    className="icon"
+                    style={{ color: copiedStyle }}
+                  ></FontAwesomeIcon>
+                </IconButton>
+              </CopyToClipboard>
+            </div>
+          </div>
           <div className="grid-icon-links">
             <div className="icon-bar">
               {icons.map((item, index) => (

@@ -11,15 +11,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const App = () => {
-  const [skills, setSkills] = useState([
-    'React.js',
-    'JavaScript',
-    'HTML5',
-    'CSS3',
-    'C#'
-  ]);
+  const [skills] = useState(['React.js', 'JavaScript', 'HTML5', 'CSS3', 'C#']);
 
-  const [icons, setIcons] = useState([
+  const [icons] = useState([
     {
       icon: faLinkedin,
       link: 'https://www.linkedin.com/in/mohammed-jauhaar-saib-556a80177/',
