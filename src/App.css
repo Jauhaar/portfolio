@@ -175,6 +175,7 @@
   /* font-style: italic; */
   padding-top: 5px;
   text-shadow: 1px 1px 5px 5px #000;
+  user-select: none;
 }
 
 .grid-portrait .circle-crop {
@@ -201,6 +202,7 @@
   width: 75%;
   font-size: 1.25rem;
   font-style: italic;
+  user-select: none;
 }
 
 .info-card span {
