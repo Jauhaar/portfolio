@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Skill from './components/Skill';
 import Menu from './components/Menu';
+import MobileMenu from './components/MobileMenu';
 import Icon from './components/Icon';
 import coverImage from './images/coverimage.png';
 import './App.css';
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <div className="App">
       <Menu />
+      <MobileMenu />
       <div className="container">
         <div className="app-grid">
           <div className="grid-cover-image">

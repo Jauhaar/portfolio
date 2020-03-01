@@ -12,21 +12,20 @@ import IconButton from '@material-ui/core/IconButton';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Menu = () => {
+const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [menuBtnState, setMenuBtmState] = useState('menu-btn');
-  const [showLeftPanel, setShowLeftPanel] = useState('left-panel');
-  const [showRightPanel, setShowRightPanel] = useState('right-panel');
+  const [showMenuPanel, setShowMenuPanel] = useState('mobile-menu-panel');
   const [showNav, setShowNav] = useState('nav-item');
 
   const OnMenuBtnCLick = () => {
     setShowMenu(!showMenu);
     setMenuBtmState(showMenu ? 'menu-btn' : 'menu-btn close');
-    setShowLeftPanel(showMenu ? 'left-panel' : 'left-panel show');
-    setShowRightPanel(showMenu ? 'right-panel' : 'right-panel show');
+    setShowMenuPanel(showMenu ? 'mobile-menu-panel' : 'mobile-menu-panel show');
     setShowNav(showMenu ? 'nav-item' : 'nav-item show');
     setCopiedStyle('#fff');
-    console.log(showLeftPanel);
+    console.log(showMenuPanel);
+    console.log(showMenu);
   };
 
   const [icons] = useState([
@@ -42,7 +41,7 @@ const Menu = () => {
   const [copiedStyle, setCopiedStyle] = useState('#a3a3a3');
 
   return (
-    <div className="menu">
+    <div className="mobile-menu">
       {/* Menu Button */}
       <div className={menuBtnState} onClick={OnMenuBtnCLick}>
         <div className="btn-line menu-btn-animation"></div>
@@ -50,26 +49,32 @@ const Menu = () => {
         <div className="btn-line menu-btn-animation"></div>
       </div>
 
-      {/* Left Panel */}
-      <div className={showLeftPanel}>
-        {/* Area for self portrait and contact details */}
-        <div className="left-panel-grid">
+      {/* Right Panel */}
+      <div className={showMenuPanel}>
+        <div className="mobile-menu-grid">
           <div className="grid-portrait">
             <div className="circle-crop">
               <img src={portrait} alt="" />
             </div>
             <p>Mohammed Jauhaar Saib</p>
           </div>
-          <div className="grid-info">
-            <div className="info-card">
-              <p>
-                “Give a man a program, frustrate him for a day. Teach a man to
-                program, frustrate him for a lifetime.”
-              </p>
-              <span>-A frustrated programmer</span>
-            </div>
+          <div className="grid-nav">
+            <ul className="menu-nav">
+              <li className={showNav}>
+                <p className="nav-link">Home</p>
+              </li>
+              <li className={showNav}>
+                <p className="nav-link">My Work</p>
+              </li>
+              <li className={showNav}>
+                <p className="nav-link">About</p>
+              </li>
+              <li className={showNav}>
+                <p className="nav-link">Contact Me</p>
+              </li>
+            </ul>
           </div>
-          <div className="grid-contact-details">
+          <div className="grid-email">
             <div className="contact-card">
               <span className="txt-email">m.jauhaar.saib@gmail.com</span>
               <CopyToClipboard
@@ -89,7 +94,7 @@ const Menu = () => {
               </CopyToClipboard>
             </div>
           </div>
-          <div className="grid-icon-links">
+          <div className="grid-links">
             <div className="icon-bar">
               {icons.map((item, index) => (
                 <Icon
@@ -103,26 +108,8 @@ const Menu = () => {
           </div>
         </div>
       </div>
-
-      {/* Right Panel */}
-      <div className={showRightPanel}>
-        <ul className="menu-nav">
-          <li className={showNav}>
-            <p className="nav-link">Home</p>
-          </li>
-          <li className={showNav}>
-            <p className="nav-link">My Work</p>
-          </li>
-          <li className={showNav}>
-            <p className="nav-link">About</p>
-          </li>
-          <li className={showNav}>
-            <p className="nav-link">Contact Me</p>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };
 
-export default Menu;
+export default MobileMenu;
