@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Icon from './Icon.js';
 import portrait from '../images/portrait.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithubSquare,
@@ -9,25 +10,15 @@ import {
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
 import '../App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [menuBtnState, setMenuBtmState] = useState('menu-btn');
+  const [menuBtnState, setMenuBtnState] = useState('menu-btn');
   const [showLeftPanel, setShowLeftPanel] = useState('left-panel');
   const [showRightPanel, setShowRightPanel] = useState('right-panel');
   const [showNav, setShowNav] = useState('nav-item');
-
-  const OnMenuBtnCLick = () => {
-    setShowMenu(!showMenu);
-    setMenuBtmState(showMenu ? 'menu-btn' : 'menu-btn close');
-    setShowLeftPanel(showMenu ? 'left-panel' : 'left-panel show');
-    setShowRightPanel(showMenu ? 'right-panel' : 'right-panel show');
-    setShowNav(showMenu ? 'nav-item' : 'nav-item show');
-    setCopiedStyle('#fff');
-    console.log(showLeftPanel);
-  };
 
   const [icons] = useState([
     {
@@ -40,6 +31,23 @@ const Menu = () => {
   ]);
 
   const [copiedStyle, setCopiedStyle] = useState('#a3a3a3');
+
+  const OnMenuBtnCLick = () => {
+    setShowMenu(!showMenu);
+    setMenuBtnState(showMenu ? 'menu-btn' : 'menu-btn close');
+    setShowLeftPanel(showMenu ? 'left-panel' : 'left-panel show');
+    setShowRightPanel(showMenu ? 'right-panel' : 'right-panel show');
+    setShowNav(showMenu ? 'nav-item' : 'nav-item show');
+    setCopiedStyle('#fff');
+  };
+
+  const OnLinkClick = () => {
+    setShowMenu(!showMenu);
+    setMenuBtnState('menu-btn');
+    setShowLeftPanel('left-panel');
+    setShowRightPanel('right-panel');
+    setShowNav('nav-item');
+  };
 
   return (
     <div className="menu">
@@ -108,16 +116,24 @@ const Menu = () => {
       <div className={showRightPanel}>
         <ul className="menu-nav">
           <li className={showNav}>
-            <p className="nav-link">Home</p>
+            <Link to="/" className="link" onClick={OnLinkClick}>
+              <p className="nav-link">Home</p>
+            </Link>
           </li>
           <li className={showNav}>
-            <p className="nav-link">My Work</p>
+            <Link to="/myprojects" className="link" onClick={OnLinkClick}>
+              <p className="nav-link">My Work</p>
+            </Link>
           </li>
           <li className={showNav}>
-            <p className="nav-link">About</p>
+            <Link to="/about" className="link" onClick={OnLinkClick}>
+              <p className="nav-link">About</p>
+            </Link>
           </li>
           <li className={showNav}>
-            <p className="nav-link">Contact Me</p>
+            <Link to="/contactme" className="link" onClick={OnLinkClick}>
+              <p className="nav-link">Contact Me</p>
+            </Link>
           </li>
         </ul>
       </div>

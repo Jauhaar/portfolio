@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Icon from './Icon.js';
 import portrait from '../images/portrait.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithubSquare,
@@ -9,24 +10,14 @@ import {
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
 import '../App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [menuBtnState, setMenuBtmState] = useState('menu-btn');
+  const [menuBtnState, setMenuBtnState] = useState('menu-btn');
   const [showMenuPanel, setShowMenuPanel] = useState('mobile-menu-panel');
   const [showNav, setShowNav] = useState('nav-item');
-
-  const OnMenuBtnCLick = () => {
-    setShowMenu(!showMenu);
-    setMenuBtmState(showMenu ? 'menu-btn' : 'menu-btn close');
-    setShowMenuPanel(showMenu ? 'mobile-menu-panel' : 'mobile-menu-panel show');
-    setShowNav(showMenu ? 'nav-item' : 'nav-item show');
-    setCopiedStyle('#fff');
-    console.log(showMenuPanel);
-    console.log(showMenu);
-  };
 
   const [icons] = useState([
     {
@@ -39,6 +30,21 @@ const MobileMenu = () => {
   ]);
 
   const [copiedStyle, setCopiedStyle] = useState('#a3a3a3');
+
+  const OnMenuBtnCLick = () => {
+    setShowMenu(!showMenu);
+    setMenuBtnState(showMenu ? 'menu-btn' : 'menu-btn close');
+    setShowMenuPanel(showMenu ? 'mobile-menu-panel' : 'mobile-menu-panel show');
+    setShowNav(showMenu ? 'nav-item' : 'nav-item show');
+    setCopiedStyle('#fff');
+  };
+
+  const OnLinkClick = () => {
+    setShowMenu(!showMenu);
+    setMenuBtnState('menu-btn');
+    setShowMenuPanel('mobile-menu-panel');
+    setShowNav('nav-item');
+  };
 
   return (
     <div className="mobile-menu">
@@ -61,16 +67,24 @@ const MobileMenu = () => {
           <div className="grid-nav">
             <ul className="menu-nav">
               <li className={showNav}>
-                <p className="nav-link">Home</p>
+                <Link to="/" className="link" onClick={OnLinkClick}>
+                  <p className="nav-link">Home</p>
+                </Link>
               </li>
               <li className={showNav}>
-                <p className="nav-link">My Work</p>
+                <Link to="/myprojects" className="link" onClick={OnLinkClick}>
+                  <p className="nav-link">My Work</p>
+                </Link>
               </li>
               <li className={showNav}>
-                <p className="nav-link">About</p>
+                <Link to="/about" className="link" onClick={OnLinkClick}>
+                  <p className="nav-link">About</p>
+                </Link>
               </li>
               <li className={showNav}>
-                <p className="nav-link">Contact Me</p>
+                <Link to="/contactme" className="link" onClick={OnLinkClick}>
+                  <p className="nav-link">Contact Me</p>
+                </Link>
               </li>
             </ul>
           </div>
