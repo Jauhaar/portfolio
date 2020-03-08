@@ -8,6 +8,7 @@ import {
   faGithubSquare,
   faCodepen
 } from '@fortawesome/free-brands-svg-icons';
+import { useSpring, animated, config } from 'react-spring';
 
 const Home = () => {
   const [skills] = useState(['React.js', 'JavaScript', 'HTML5', 'CSS3', 'C#']);
@@ -22,11 +23,21 @@ const Home = () => {
     { icon: faGithubSquare, link: 'https://github.com/jauhaar', size: '3x' }
   ]);
 
+  const fade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 }
+  });
+
   return (
-    <div className="home">
+    <animated.div className="home" style={fade}>
       <div className="container">
         <div className="app-grid">
           <div className="grid-cover-image">
+            <div className="cover-text">
+              Hello, I'm <span>Mohammed Jauhaar Saib</span>. I'm a passionate
+              web developer.
+            </div>
             <img src={coverImage} alt="" />
           </div>
           <div className="grid-skills-bar">
@@ -50,7 +61,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 };
 
