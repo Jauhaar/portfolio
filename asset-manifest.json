@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0c0d3b45.chunk.css",
-    "main.js": "/portfolio/static/js/main.419f6a0f.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.419f6a0f.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.1c99900c.chunk.css",
+    "main.js": "/portfolio/static/js/main.2465c993.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.2465c993.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.44087e9b.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.44087e9b.js.map",
-    "static/js/2.2db9d2bf.chunk.js": "/portfolio/static/js/2.2db9d2bf.chunk.js",
-    "static/js/2.2db9d2bf.chunk.js.map": "/portfolio/static/js/2.2db9d2bf.chunk.js.map",
+    "static/js/2.1d5cd09d.chunk.js": "/portfolio/static/js/2.1d5cd09d.chunk.js",
+    "static/js/2.1d5cd09d.chunk.js.map": "/portfolio/static/js/2.1d5cd09d.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.ae44a680eb843578d57c362c2d271eb0.js": "/portfolio/precache-manifest.ae44a680eb843578d57c362c2d271eb0.js",
+    "precache-manifest.c48b9a24678dd5e06286638b3afecf8d.js": "/portfolio/precache-manifest.c48b9a24678dd5e06286638b3afecf8d.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.0c0d3b45.chunk.css.map": "/portfolio/static/css/main.0c0d3b45.chunk.css.map",
-    "static/js/2.2db9d2bf.chunk.js.LICENSE.txt": "/portfolio/static/js/2.2db9d2bf.chunk.js.LICENSE.txt",
+    "static/css/main.1c99900c.chunk.css.map": "/portfolio/static/css/main.1c99900c.chunk.css.map",
+    "static/js/2.1d5cd09d.chunk.js.LICENSE.txt": "/portfolio/static/js/2.1d5cd09d.chunk.js.LICENSE.txt",
     "static/media/App.css": "/portfolio/static/media/rightMenuPanel.9761d70e.jpg",
     "static/media/coverimage.png": "/portfolio/static/media/coverimage.6520d0b4.png",
-    "static/media/portrait.jpg": "/portfolio/static/media/portrait.febcd23a.jpg"
+    "static/media/portrait.jpg": "/portfolio/static/media/portrait.febcd23a.jpg",
+    "static/media/thumbnail-starwars.jpg": "/portfolio/static/media/thumbnail-starwars.f8bcd03d.jpg",
+    "static/media/thumbnail-todos.jpg": "/portfolio/static/media/thumbnail-todos.59fca2f6.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.44087e9b.js",
-    "static/js/2.2db9d2bf.chunk.js",
-    "static/css/main.0c0d3b45.chunk.css",
-    "static/js/main.419f6a0f.chunk.js"
+    "static/js/2.1d5cd09d.chunk.js",
+    "static/css/main.1c99900c.chunk.css",
+    "static/js/main.2465c993.chunk.js"
   ]
 }
