@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
+  const isMobile = window.innerWidth < 600;
+
   const [icons, setIcons] = useState([
     {
       icon: faLightbulb,
@@ -59,7 +61,7 @@ const About = () => {
           <animated.p style={slideInText}>ABOUT ME</animated.p>
           <animated.span className="line" style={slideInLine}></animated.span>
         </div>
-        <div className="grid-graph center">
+        <div className="grid-graph">
           <div className="graph-container">
             <div className="graph-container-grid">
               {/* HEADINGS */}
@@ -141,18 +143,22 @@ const About = () => {
         <div className="grid-icons">
           {icons.map((item, index) => (
             <div className="icon-section">
-              <FontAwesomeIcon icon={item.icon} size={'3x'} className="icon" />
+              <FontAwesomeIcon
+                icon={item.icon}
+                size={isMobile ? '3x' : '4x'}
+                className="icon"
+              />
               <p className="title">{item.heading}</p>
               <p className="description">{item.description}</p>
             </div>
           ))}
         </div>
         <div className="grid-about">
+          <h1>Who am I?</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            quis tempora, sunt voluptas, nobis reiciendis, quisquam quas minus
-            ut molestias ea illum cupiditate quod impedit assumenda rem amet
-            eveniet qui.
+            I am a Web Developer from Durban, South Africa. I have a passion for
+            UI effects and intuitive and dynamic design that bring websites to
+            life.
           </p>
         </div>
       </div>
