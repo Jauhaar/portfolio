@@ -16,24 +16,35 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { useSpring, animated, config } from 'react-spring';
 
 const Projects = () => {
+  // Variables
+  const isMobile = window.innerWidth < 600;
+
   const [projects] = useState([
     {
       title: 'Star Wars Website',
       thumbnail: thumbnailStarwars,
       description:
         'A Star Wars themed website that I created for Immedia Summer School 2019.',
-      icons: [
-        {
-          icon: faGithubSquare,
-          link: 'https://github.com/Jauhaar/SummerSchool_StarWarsWebsite',
-          size: '2x'
-        },
-        {
-          icon: faPlayCircle,
-          link: 'https://jauhaar.github.io/SummerSchool_StarWarsWebsite/',
-          size: '2x'
-        }
-      ],
+      icons: isMobile
+        ? [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/SummerSchool_StarWarsWebsite',
+              size: '2x'
+            }
+          ]
+        : [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/SummerSchool_StarWarsWebsite',
+              size: '2x'
+            },
+            {
+              icon: faPlayCircle,
+              link: 'https://jauhaar.github.io/SummerSchool_StarWarsWebsite/',
+              size: '2x'
+            }
+          ],
       longDescription:
         'This project is a complete website, featuring simulated ticket booking, coded entirely by myself. This project shows off my proficiency in Web Development with HTML5, CSS3 and Vanilla JavaScript DOM manipulation.',
       languages: [{ icon: faCss3Alt }, { icon: faHtml5 }, { icon: faJsSquare }]
@@ -43,23 +54,36 @@ const Projects = () => {
       thumbnail: thumbnailTodos,
       description:
         'A simplistic To Do List Web App, created in HTML5, CSS3 and Vanilla JavaScript.',
-      icons: [
-        {
-          icon: faGithubSquare,
-          link: 'https://github.com/Jauhaar/To-Do-List-Web-App',
-          size: '2x'
-        },
-        {
-          icon: faCodepen,
-          link: 'https://codepen.io/Jauhaar/full/LYYoWyy',
-          size: '2x'
-        },
-        {
-          icon: faPlayCircle,
-          link: 'https://jauhaar.github.io/To-Do-List-Web-App/',
-          size: '2x'
-        }
-      ],
+      icons: isMobile
+        ? [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/To-Do-List-Web-App',
+              size: '2x'
+            },
+            {
+              icon: faCodepen,
+              link: 'https://codepen.io/Jauhaar/full/LYYoWyy',
+              size: '2x'
+            }
+          ]
+        : [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/To-Do-List-Web-App',
+              size: '2x'
+            },
+            {
+              icon: faCodepen,
+              link: 'https://codepen.io/Jauhaar/full/LYYoWyy',
+              size: '2x'
+            },
+            {
+              icon: faPlayCircle,
+              link: 'https://jauhaar.github.io/To-Do-List-Web-App/',
+              size: '2x'
+            }
+          ],
       longDescription:
         'This project, simple yet feature rich, features robust search and filtering. This project displays my proficiency in creating Web Apps with HTML5, CSS3 and Vanilla JavaScript.',
       languages: [{ icon: faCss3Alt }, { icon: faHtml5 }, { icon: faJsSquare }]
@@ -69,18 +93,26 @@ const Projects = () => {
       thumbnail: thumbnailFlappyClone,
       description:
         'A barebones Flappy Bird Web App created with HTML5 Canvas and Vanilla JavaScript.',
-      icons: [
-        {
-          icon: faGithubSquare,
-          link: 'https://github.com/Jauhaar/FlappyBirdClone',
-          size: '2x'
-        },
-        {
-          icon: faPlayCircle,
-          link: 'https://jauhaar.github.io/FlappyBirdClone/',
-          size: '2x'
-        }
-      ],
+      icons: isMobile
+        ? [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/FlappyBirdClone',
+              size: '2x'
+            }
+          ]
+        : [
+            {
+              icon: faGithubSquare,
+              link: 'https://github.com/Jauhaar/FlappyBirdClone',
+              size: '2x'
+            },
+            {
+              icon: faPlayCircle,
+              link: 'https://jauhaar.github.io/FlappyBirdClone/',
+              size: '2x'
+            }
+          ],
       longDescription:
         'My first JavaScript project, in which I utilised gamification to learn the programming language. Featuring Object Pooling, a popular technique used in game development.',
       languages: [{ icon: faHtml5 }, { icon: faJsSquare }]
@@ -101,6 +133,7 @@ const Projects = () => {
     longDescription: 'temp',
     languages: [{ icon: faJsSquare }]
   });
+  // Callback function
   const GetPopUpState = state => {
     setPopUpState(state);
   };

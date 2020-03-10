@@ -18,6 +18,7 @@ const MobileMenu = () => {
   const [menuBtnState, setMenuBtnState] = useState('menu-btn');
   const [showMenuPanel, setShowMenuPanel] = useState('mobile-menu-panel');
   const [showNav, setShowNav] = useState('nav-item');
+  const [closeOverlay, setCloseOverlay] = useState('close-menu');
 
   const [icons] = useState([
     {
@@ -37,6 +38,7 @@ const MobileMenu = () => {
     setShowMenuPanel(showMenu ? 'mobile-menu-panel' : 'mobile-menu-panel show');
     setShowNav(showMenu ? 'nav-item' : 'nav-item show');
     setCopiedStyle('#fff');
+    setCloseOverlay(showMenu ? 'close-menu' : 'close-menu show');
   };
 
   const OnLinkClick = () => {
@@ -44,6 +46,7 @@ const MobileMenu = () => {
     setMenuBtnState('menu-btn');
     setShowMenuPanel('mobile-menu-panel');
     setShowNav('nav-item');
+    setCloseOverlay('close-menu');
   };
 
   return (
@@ -54,7 +57,7 @@ const MobileMenu = () => {
         <div className="btn-line menu-btn-animation"></div>
         <div className="btn-line menu-btn-animation"></div>
       </div>
-
+      <div className={closeOverlay} onClick={OnMenuBtnCLick}></div>
       {/* Right Panel */}
       <div className={showMenuPanel}>
         <div className="mobile-menu-grid">
