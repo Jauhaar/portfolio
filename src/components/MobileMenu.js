@@ -81,7 +81,7 @@ const MobileMenu = () => {
               </li>
               <li className={showNav}>
                 <Link to="/about" className="link" onClick={OnLinkClick}>
-                  <p className="nav-link">About</p>
+                  <p className="nav-link">About Me</p>
                 </Link>
               </li>
               <li className={showNav}>

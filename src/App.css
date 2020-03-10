@@ -721,6 +721,229 @@
 }
 
 /* ABOUT PAGE */
+.about {
+  width: 100%;
+  min-height: 100%;
+}
+
+.about-page-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'heading heading'
+    'graph graph'
+    'icons about';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 2fr;
+}
+
+.about-page-grid .grid-heading {
+  grid-area: heading;
+  margin-top: 2rem;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.about-page-grid .line {
+  display: block;
+  width: 8rem;
+  margin-top: 5px;
+  text-align: center;
+  color: #808080;
+  border-bottom: 4px solid #358cd6;
+}
+
+.grid-graph {
+  grid-area: graph;
+  width: 100%;
+  height: 100%;
+}
+
+.graph-container {
+  width: 70%;
+  height: 100%;
+  margin-top: 1rem;
+  /* border: 1px solid #fff; */
+}
+
+.graph-container-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    '. beginner intermediate advanced expert'
+    'js js-beg js-int js-adv .'
+    'html html-beg html-int html-adv.'
+    'css css-beg css-int css-adv .'
+    'react react-beg react-int . .'
+    'cs cs-beg . . .'
+    'ps ps-beg ps-int . .';
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.graph-container-grid .heading {
+  font-size: 1.25rem;
+  margin: auto;
+}
+
+.graph-container-grid .side-heading {
+  font-size: 1.25rem;
+  margin: auto 0;
+}
+
+.graph-container-grid .cell {
+  width: 50%;
+  height: 50%;
+  background: #358cd6;
+  border-radius: 2px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.beginner {
+  grid-area: beginner;
+}
+
+.intermediate {
+  grid-area: intermediate;
+}
+
+.advanced {
+  grid-area: advanced;
+}
+
+.expert {
+  grid-area: expert;
+}
+
+.js {
+  grid-area: js;
+}
+
+.js-beg {
+  grid-area: js-beg;
+}
+
+.js-int {
+  grid-area: js-int;
+}
+
+.js-adv {
+  grid-area: js-adv;
+}
+
+.html {
+  grid-area: html;
+}
+
+.html-beg {
+  grid-area: html-beg;
+}
+
+.html-int {
+  grid-area: html-int;
+}
+
+.html-adv {
+  grid-area: html-adv;
+}
+
+.css {
+  grid-area: css;
+}
+
+.css-beg {
+  grid-area: css-beg;
+}
+
+.css-int {
+  grid-area: css-int;
+}
+
+.css-adv {
+  grid-area: css-adv;
+}
+
+.react {
+  grid-area: react;
+}
+
+.react-beg {
+  grid-area: react-beg;
+}
+
+.react-int {
+  grid-area: react-int;
+}
+
+.cs {
+  grid-area: cs;
+}
+
+.cs-beg {
+  grid-area: cs-beg;
+}
+
+.ps {
+  grid-area: ps;
+}
+
+.ps-beg {
+  grid-area: ps-beg;
+}
+
+.ps-int {
+  grid-area: ps-int;
+}
+
+.grid-icons {
+  grid-area: icons;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grid-icons .icon {
+  color: #358cd6;
+}
+
+.grid-icons .icon-section {
+  width: 40%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon-section .title {
+  font-size: 1.25rem;
+}
+
+.icon-section .descripton {
+  width: 80%;
+}
+
+.grid-about {
+  grid-area: about;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.grid-about p {
+  width: 80%;
+  font-size: 1.5rem;
+}
 
 /* CONTACT PAGE */
 .contact {
@@ -881,7 +1104,7 @@
   justify-content: space-around;
 }
 
-/* MEDIA QUERIES */
+/* --- MEDIA QUERIES --- */
 @media (max-width: 600px) {
   .container {
     width: 100%;
@@ -936,7 +1159,7 @@
     display: flex;
   }
 
-  /* PROJECTS PAGE */
+  /* projects page */
   .projects-page-grid {
     min-height: 100%;
     display: flex;
@@ -1019,7 +1242,6 @@
   }
 
   /* CONTACT PAGE */
-
   .contact-page-grid .grid-heading {
     margin-top: 5rem;
   }
@@ -1036,29 +1258,3 @@
     width: 80%;
   }
 }
-
-/* @supports (justify-content: space-evenly) {
-  .grid-icon-bar .icon-bar {
-    justify-content: space-evenly;
-  }
-
-  .menu .grid-icon-links .icon-bar {
-    justify-content: space-evenly;
-  }
-
-  .menu-nav {
-    justify-content: space-evenly;
-  }
-
-  .popup-grid .grid-icons .languages-container {
-    justify-content: space-evenly;
-  }
-
-  .popup-grid .grid-icons .links-container {
-    justify-content: space-evenly;
-  }
-
-  .project-grid .grid-links {
-    justify-content: space-evenly;
-  }
-} */
